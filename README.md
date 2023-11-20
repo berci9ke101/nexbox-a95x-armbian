@@ -23,7 +23,7 @@ onto the A95X. This guide aims to help you out with that.
 
 ## So what will you need
 
-The first question is whether you want to use your A95X box a server or as a more user-friendly computer with desktop
+The first question is whether you want to use your A95X box as a server or as a more user-friendly computer with desktop
 environment.
 
 <div align="center">
