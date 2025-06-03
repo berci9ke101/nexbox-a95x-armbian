@@ -18,7 +18,7 @@ onto the A95X. This guide aims to help you out with that.
 
 ## The hardware
 
-* **CPU:** Amlogic S905 quad core ARM Cortex-A53 @ up to 2.0GHz
+* **CPU:** Amlogic S905 or S905X quad core ARM Cortex-A53 @ up to 2.0GHz
 * **GPU:** penta-core Mali-450MP GPU
 * **Memory:** 1 or 2 GB DDR3
 * **Storage:** 8 or 16 GB NAND flash
@@ -65,13 +65,15 @@ environment included. Like [Cinnamon](https://projects.linuxmint.com/cinnamon/) 
    LINUX /Image
    INITRD /uInitrd
 
+   # for S905X
    FDT /dtb/amlogic/meson-gxl-s905x-p212.dtb
+
+   # for S905
+   # FDT /dtb/amlogic/meson-gxbb-nexbox-a95x.dtb
    
    append ...   
    ```
-6. Now you need to go back to the **BOOT** partition and **COPY** the file, named `u-boot-s905x2-s912` to the same place
-   with the
-   name: `u-boot.ext`
+6. Now you need to go back to the **BOOT** partition and **COPY** the file, named `u-boot-s905x2-s912` for S905X or `u-boot-s905` for S905 to the same place with the name: `u-boot.ext`
 7. That should cover the software part of the project.
 
 ## Booting up the box
@@ -90,10 +92,7 @@ environment included. Like [Cinnamon](https://projects.linuxmint.com/cinnamon/) 
 
 ## Troubleshooting
 
-I have only tested this on the A95X with 4 cores, 2GB ram and 16GB NAND memory. I have also included
-the `extlinux.conf`, the `u-boot` and the `dtb` files that worked for me. You can download the exact image I used for my
-TV
-box [here](https://armbian.systemonachip.net/dl/aml-s9xx-box/archive/Armbian_23.8.1_Aml-s9xx-box_jammy_current_6.1.50.img.xz).
+This has been tested on the S905X A95X with 2GB ram and 16GB NAND memory as well as version S905 A95X with 1GB ram and 8GB NAND. S905X's `extlinux.conf`, the `u-boot` and the `dtb` files that worked are included in the repo. You can download the exact image that was used for S905X box [here](https://armbian.systemonachip.net/dl/aml-s9xx-box/archive/Armbian_23.8.1_Aml-s9xx-box_jammy_current_6.1.50.img.xz).
 But here are some helpful tips:
 
 * If the device just boots into the Android system and nothing happens, the most likely thing is that the SD card is
